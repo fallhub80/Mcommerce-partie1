@@ -1,0 +1,255 @@
+{
+	"id": "325aa0b6-8037-549f-5357-aee0e782cbd7",
+	"name": "Test",
+	"allTests": [],
+	"timestamp": 1611656859886,
+	"collection_id": "90bbb685-752a-75de-93df-eed3451d9ac9",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "90bbb685-752a-75de-93df-eed3451d9ac9",
+		"name": "Test",
+		"description": "",
+		"order": [
+			"8a3e1fd6-6b51-9202-b3ff-02aee4c57f91",
+			"de54716d-6439-4ddc-8b5e-8874a01050c3",
+			"be9986eb-352e-7289-cf7e-3c3d4b0e15d5"
+		],
+		"folders": [],
+		"folders_order": [],
+		"requests": [
+			{
+				"id": "8a3e1fd6-6b51-9202-b3ff-02aee4c57f91",
+				"headers": "",
+				"headerData": [],
+				"url": "http://localhost:9090/AdminProduits",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "90bbb685-752a-75de-93df-eed3451d9ac9",
+				"data": null,
+				"dataMode": "params",
+				"name": "http://localhost:9090/AdminProduits",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1611656480281,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {}
+			},
+			{
+				"id": "be9986eb-352e-7289-cf7e-3c3d4b0e15d5",
+				"headers": "Content-Type: application/json\n",
+				"headerData": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"enabled": true
+					}
+				],
+				"url": "http://localhost:9090/Produits",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "POST",
+				"collectionId": "90bbb685-752a-75de-93df-eed3451d9ac9",
+				"data": "{\n  \"nom\":\"Voiture Nissan\",\n  \"prix\":100000,\n  \"prixAchat\":200000\n}",
+				"dataMode": "raw",
+				"name": "http://localhost:9090/Produits",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1611656823873,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {}
+			},
+			{
+				"id": "de54716d-6439-4ddc-8b5e-8874a01050c3",
+				"headers": "Content-Type: application/json\n",
+				"headerData": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"enabled": true
+					}
+				],
+				"url": "http://localhost:9090/Produits",
+				"queryParams": [],
+				"preRequestScript": null,
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "POST",
+				"data": "{\n        \n        \"nom\": \"Laptop\",\n        \"prix\": 50000,\n        \"prixAchat\": 200000\n}",
+				"dataMode": "raw",
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1611656719172,
+				"name": "http://localhost:9090/triProduits",
+				"description": "",
+				"collectionId": "90bbb685-752a-75de-93df-eed3451d9ac9",
+				"responses": []
+			}
+		],
+		"timestamp": 1611656355829,
+		"synced": false,
+		"syncedFilename": "",
+		"remote_id": 0,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"owner": "14271508",
+		"subscribed": false,
+		"createdAt": 1611656355829,
+		"updatedAt": 1611656823905,
+		"write": true,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {},
+		"sharedWithTeam": false
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"id": "8a3e1fd6-6b51-9202-b3ff-02aee4c57f91",
+			"name": "http://localhost:9090/AdminProduits",
+			"url": "http://localhost:9090/AdminProduits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			],
+			"time": 9,
+			"totalRequestTime": 9,
+			"iterationResults": {}
+		},
+		{
+			"id": "de54716d-6439-4ddc-8b5e-8874a01050c3",
+			"name": "http://localhost:9090/triProduits",
+			"url": "http://localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			],
+			"time": 6,
+			"totalRequestTime": 6,
+			"iterationResults": {}
+		},
+		{
+			"id": "be9986eb-352e-7289-cf7e-3c3d4b0e15d5",
+			"name": "http://localhost:9090/Produits",
+			"url": "http://localhost:9090/Produits",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			],
+			"time": 7,
+			"totalRequestTime": 7,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 0,
+	"totalFail": 0,
+	"totalTime": 22,
+	"lifecycle": "done",
+	"willStop": false,
+	"requests": [
+		{
+			"name": "http://localhost:9090/AdminProduits",
+			"id": "8a3e1fd6-6b51-9202-b3ff-02aee4c57f91",
+			"url": "http://localhost:9090/AdminProduits",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "http://localhost:9090/triProduits",
+			"id": "de54716d-6439-4ddc-8b5e-8874a01050c3",
+			"url": "http://localhost:9090/Produits",
+			"time": 6,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "http://localhost:9090/Produits",
+			"id": "be9986eb-352e-7289-cf7e-3c3d4b0e15d5",
+			"url": "http://localhost:9090/Produits",
+			"time": 7,
+			"responseCode": {
+				"code": 201,
+				"name": "Created",
+				"detail": "The request has been fulfilled and resulted in a new resource being created."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		}
+	],
+	"synced": false
+}

@@ -23,6 +23,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.ecommerce.microcommerce.dao.ProductDao;
 import com.ecommerce.microcommerce.model.Product;
+import com.ecommerce.microcommerce.web.exceptions.ProduitGratuitException;
 import com.ecommerce.microcommerce.web.exceptions.ProduitIntrouvableException;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
@@ -77,10 +78,17 @@ public class ProductController {
 
 	public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
 
+		if (product.getPrix() == 0) {
+			throw new ProduitGratuitException(
+					"Le prix de vente d'un produit ne peut pas être égal à 0 ");
+		}
+
 		Product productAdded = productDao.save(product);
 
 		if (productAdded == null)
 			return ResponseEntity.noContent().build();
+		
+		
 
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
 				.buildAndExpand(productAdded.getId()).toUri();
@@ -124,10 +132,12 @@ public class ProductController {
 
 	}
 
-	@GetMapping(value = "trierProduitsParOrdreAlphabetique")
+	@GetMapping(value = "triProduits")
 	public MappingJacksonValue trierProduitsParOrdreAlphabetique() {
 
 		Iterable<Product> produits = productDao.findAll(Sort.by(Sort.Direction.ASC, "nom"));
+		
+		productDao.findAllByOrderByNom();
 
 		MappingJacksonValue produitsFiltres = new MappingJacksonValue(produits);
 
